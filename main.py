@@ -25,6 +25,9 @@ def recommend(name: str):
 
 
 def get_recom(name: str, similarity_data=cos_sim_df, items=data[['title', 'genre']], k=5) -> List[Dict]:
+    if name not in similarity_data.index:
+        return {'error': 'not found value'}
+
     index = similarity_data.loc[:, name].to_numpy().argpartition(range(-1, -k, -1))
     closest = similarity_data.columns[index[-1:-(k+2):-1]]
     closest = closest.drop(name, errors='ignore')
