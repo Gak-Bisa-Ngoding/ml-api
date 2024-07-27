@@ -1,7 +1,6 @@
 from typing import Union, List, Dict
 import pandas as pd
 from fastapi import FastAPI
-import json
 
 app = FastAPI()
 

@@ -1,2 +1,3 @@
 fastapi
 pandas
+hypercorn==0.14.4
